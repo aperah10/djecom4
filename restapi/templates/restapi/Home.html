@@ -1,0 +1,121 @@
+<!DOCTYPE html> {% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Home Page </title>
+  <!-- Bootstrap CSS Local -->
+  <link rel="stylesheet" href="{% static 'restapi/css/bootstrap.css' %}">
+  <link rel="stylesheet" href="{% static 'restapi/css/table.css' %}">
+</head>
+
+<body>
+
+
+
+  <h1> {{request.user}} </h1>
+
+  <h2> We have all List of Page in this Website </h2>
+
+
+  <!-- TABLE FOR THE HOME PAGE  -->
+  <table>
+    <caption>Statement Summary</caption>
+    <thead>
+      <tr>
+        <th scope="col"> Serial No. </th>
+        <th scope="col">Page Name </th>
+        <th scope="col"> Date</th>
+        <th scope="col"> Url link </th>
+
+      </tr>
+    </thead>
+    <tbody>
+      {% if request.user.is_authenticated %}
+      <tr>
+        <td data-label="Serial"> 0 </td>
+        <td data-label="Account"> Logout </td>
+
+        <td data-label="Due Date">04/01/2021</td>
+
+        <td data-label="Period"> <a href="" class="btn btn-outline-success my-2 btn-sm">
+            Logout </a></td>
+      </tr>
+      {% endif %}
+
+
+      <tr>
+        <td data-label="Serial"> 0 </td>
+        <td data-label="Account"> Product </td>
+
+        <td data-label="Due Date">04/01/2021</td>
+
+        <td data-label="Period"> <a href="{% url 'product'  %}" class="btn btn-outline-success my-2 btn-sm">
+            Product </a></td>
+      </tr>
+
+      <tr>
+        <td data-label="Serial"> 0 </td>
+        <td data-label="Account"> Order</td>
+
+        <td data-label="Due Date">04/01/2021</td>
+
+        <td data-label="Period"> <a href="{% url 'Order'  %}" class="btn btn-outline-success my-2 btn-sm">
+            Order </a></td>
+      </tr>
+
+      <tr>
+        <td data-label="Serial"> 0 </td>
+        <td data-label="Account"> Product Web </td>
+
+        <td data-label="Due Date">04/01/2021</td>
+
+        <td data-label="Period"> <a href="" class="btn btn-outline-success my-2 btn-sm">
+            Product Web</a></td>
+      </tr>
+
+      <tr>
+        <td data-label="Serial"> 1.1 </td>
+        <td data-label="Account"> Login </td>
+
+        <td data-label="Due Date">04/01/2021</td>
+
+        <td data-label="Period"> <a href="{% url 'Login'  %}" class="btn btn-outline-success my-2 btn-sm">
+            Login </a></td>
+      </tr>
+
+
+      <tr>
+        <td data-label="Serial"> 11 </td>
+        <td data-label="Account"> Order Data </td>
+
+        <td data-label="Due Date">04/01/2021</td>
+
+        <td data-label="Period"> <a href="{% url 'getData'  %}" class="btn btn-outline-success my-2 btn-sm">
+            AllOrderData </a></td>
+      </tr>
+
+    </tbody>
+  </table>
+  <!-- END TABLE FOR HOME PAGE  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
