@@ -31,7 +31,7 @@ class ProductCartAdmin(admin.ModelAdmin):
     list_display = (
         "id",
         "product",
-        "customerCart",
+        "uplod",
         "quantity",
         "ammount",
         "totalAmmount"

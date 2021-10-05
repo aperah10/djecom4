@@ -139,7 +139,7 @@ class CartPage(APIView):
         usr = str(request.user.id)
         
         
-        usrCart = ProductCart.objects.filter(customerCart=usr)
+        usrCart = ProductCart.objects.filter(uplod=usr)
 
         try:
             ser = CartSer(usrCart, many=True)
@@ -160,12 +160,12 @@ class CartPage(APIView):
         newCart = {
             "quantity": data.get("quantity"),
             "product": data.get("product"),
-            "customerCart": str(usr),
+            "uplod": str(usr),
             
         }
 
         if ProductCart.objects.filter(
-            Q(customerCart__exact=usr)
+            Q(uplod__exact=usr)
             & Q(product__exact=data.get("product"))
         ):
             return Response({"stateCode": 201, "msg": "User Exits"}, 201)
@@ -418,14 +418,14 @@ class OrderPage(APIView):
     def post(self, request):
         data = request.data
         # usr = str(request.user.id)
-        usr=data.get("user")
+        usr=data.get("uplod")
         adr=data.get("address")
         if Address.objects.filter(Q(uplod=usr) & Q(pk=adr)) :
             new_order = {
                "product": data.get("product"),
                 "address": adr,
                 "quantity": data.get("quantity"),
-                "user": usr,
+                "uplod": usr,
                 }
 
             serializer = AllOrderSer(data=new_order)

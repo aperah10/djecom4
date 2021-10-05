@@ -54,11 +54,11 @@ class Product(models.Model):
 # !Product Cart
 class ProductCart(models.Model):
     class Meta:
-        unique_together = (("customerCart"), ("product"))
+        unique_together = (("uplod"), ("product"))
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    customerCart = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    uplod = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(default=1)
     ammount = models.PositiveIntegerField(default=0)

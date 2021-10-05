@@ -13,7 +13,7 @@ class AllOrderAdmin(admin.ModelAdmin):
         "address",
         "ammount",
         "quantity",
-        "user",
+        "uplod",
     )
 
 
@@ -27,7 +27,7 @@ class CurrentOrderAdmin(admin.ModelAdmin):
         "address",
         "ammount",
         "quantity",
-        "user",
+        "uplod",
     )
 
 
@@ -40,7 +40,7 @@ class SuccessOrderAdmin(admin.ModelAdmin):
         "product",
         "address",
         "quantity",
-        "user",
+        "uplod",
     )
 
 

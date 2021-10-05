@@ -83,7 +83,7 @@ class CartSer(serializers.ModelSerializer):
 class AddCartSer(serializers.ModelSerializer):
     class Meta:
         model = ProductCart
-        fields = ["product", "quantity", "customerCart"]
+        fields = ["product", "quantity", "uplod"]
 
 class UpCartSer(serializers.ModelSerializer):
     class Meta:
@@ -94,7 +94,7 @@ class UpCartSer(serializers.ModelSerializer):
 class AllOrderSer(serializers.ModelSerializer):
     class Meta:
         model = AllOrder
-        fields = ['quantity','address','user','product']
+        fields = ['quantity','address','uplod','product']
         # depth = 2
 
 

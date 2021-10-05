@@ -18,7 +18,7 @@ StateT = (("Pending", "Pending"), ("Accept", "Accept"), ("Decline", "Decline"))
 
 # ORDER BASE CLASS
 class BaseOrder(models.Model):
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    uplod = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     product = models.ForeignKey(
         Product,
         on_delete=models.CASCADE,
